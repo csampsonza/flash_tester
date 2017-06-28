@@ -22,7 +22,8 @@ const char *filename = "flash_test.txt";
 
 int flash_test( uint block_sz  )
    {
-   int rc ;
+   int rc, i ;
+	
 
    struct timespec t1, t2;
 
@@ -34,7 +35,7 @@ int flash_test( uint block_sz  )
    if (block_sz == 0) return 0 ;
 
 
-   for (uint i = 0; i < block_sz; i++)
+   for (i = 0; i < block_sz; i++)
       {
       ram_block[i] = rand();
       }

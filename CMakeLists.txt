@@ -10,9 +10,13 @@ if (0)
     set(CMAKE_CXX_COMPILER "arm-linux-gnueabihf-gcc")
 elseif(1)
     MESSAGE(STATUS "BUILD ARMV5 (Brain)...")
+    set(CMAKE_C_FLAGS "-O2 -feliminate-unused-debug-types -fsigned-char -fomit-frame-pointer -fno-strict-aliasing -pipe -fno-strength-reduce -march=armv4 -Wall -Wno-unused-result -s")
+
     add_definitions(-DOS_LINUX)
     set(CMAKE_C_COMPILER "arm-linux-gnueabi-gcc")
     set(CMAKE_CXX_COMPILER "arm-linux-gnueabi-gcc")
+    set(EXTRA_INCLUDES /usr/arm-linux-gnueabi/include)
+
 else ()
 endif ()
 
